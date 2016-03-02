@@ -1,0 +1,29 @@
+<md-toolbar>
+    <div class="md-toolbar-tools" layout="row">
+        <md-button class="md-icon-button" aria-label="Navigation Menu" ng-click="toggleSideNavbar()">
+            <md-icon>menu</md-icon>
+        </md-button>
+        <span flex="80">Employee Referrals</span>
+
+        <md-button class="md-icon-button" layout-fill="center end" ng-click="showNotifications()">
+            <md-icon>notifications_off</md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+
+<md-sidenav md-component-id="left" class="md-sidenav-left">
+    
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <span>Navigation Menu</span>
+        </div>
+    </md-toolbar>
+
+    <md-list ng-cloak>
+        <md-list-item ng-repeat-start="menu in menuoptions" ng-href="{{ menu.href }}" ng-click="close()">
+            <md-icon>{{ menu.icon }}</md-icon>
+            <p>{{ menu.title }}</p>
+        </md-list-item>
+        <md-divider ng-if="menu.divider" ng-repeat-end></md-divider>
+    </md-list>
+</md-sidenav>

@@ -1,0 +1,81 @@
+<md-dialog ng-cloak>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Employee Referrals</h2>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <md-tabs md-dynamic-height md-border-bottom md-stretch-tabs>
+            <md-tab>
+                <md-tab-label>Login</md-tab-label>
+                <md-tab-body>
+                    <md-content class="md-padding" flex="80" flex-offset="10" ng-controller="LoginLBCtrl">
+                        <div layout="column" layout-fill="top center">
+                            <div class="center">
+                                <img ng-src="{{ settings.logo}}" />
+                            </div>
+                            <div class="center m10">
+                                <div class="md-headline">Login to</div>
+                                <div class="md-subhead m10" ng-bind="settings.program"></div>
+                            </div>
+                            <form layout="column" name="loginform" ng-submit="login(loginuser)">
+                                <p class="md-caption red center m10" ng-show="registerErr">{{ registerErr }}</p>
+                                <md-input-container class="md-block m10"> 
+                                    <label>Email Address</label>
+                                    <input type="email" name="email" ng-model="loginuser.email" required>
+                                    <div ng-messages="loginform.email.$error">
+                                        <div ng-message="required">Email Id is Required</div>
+                                        <div ng-message="email">Email Id is not Valid</div>
+                                    </div>
+                                </md-input-container>
+                                <md-input-container class="md-block m10"> 
+                                    <label>Password</label>
+                                    <input type="password" name="password" ng-model="loginuser.password" required>
+                                    <div ng-messages="loginform.password.$error">
+                                        <div ng-message="required">Password is Required</div>
+                                    </div>
+                                </md-input-container>
+                                <md-button class="md-primary md-raised m10" type="submit">Login</md-button>
+                            </form>
+                            <div class="m10">
+                                <a ng-href="">Forgot Password?</a>
+                            </div>
+                        </div>
+                    </md-content>
+                </md-tab-body>
+            </md-tab>
+            <md-tab>
+                <md-tab-label>Register</md-tab-label>
+                <md-tab-body>
+                    <md-content class="md-padding" flex="80" flex-offset="10" ng-controller="RegisterLBCtrl">
+                        <div layout="column" layout-fill="top center">
+
+                            <div class="center">
+                                <img ng-src="{{ settings.logo}}" />
+                            </div>
+                            <div class="center m10">
+                                <div class="md-headline">Register for</div>
+                                <div class="md-subhead m10" ng-bind="settings.program"></div>
+                                <div class="md-body-2">Only Employees can Register</div>
+                            </div>
+                            <md-input-container class="md-block m10"> 
+                                <label>Name</label>
+                                <input type="text">
+                            </md-input-container>
+                            <md-input-container class="md-block m10"> 
+                                <label>Email Address</label>
+                                <input type="email">
+                            </md-input-container>
+                            <md-input-container class="md-block m10"> 
+                                <label>Password</label>
+                                <input type="password">
+                            </md-input-container>
+
+                            <md-button class="md-primary md-raised m10">Register</md-button>
+                        </div>
+                    </md-content>
+                </md-tab-body>
+            </md-tab>
+        </md-tabs>
+    </md-dialog-content>
+</md-dialog>

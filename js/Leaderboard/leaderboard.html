@@ -1,0 +1,20 @@
+<div class="p15">
+    <div class="md-title">Leaderboard</div>
+    <div class="md-heading">Just watch the competition onboard!</div>
+</div>
+<md-divider></md-divider>
+<div ng-repeat-start="user in data"></div>
+    <md-card class="card m10">
+        <md-card-content layout="row">
+            <div flex="20" class="md-display-2 txtC" ng-bind="user.rank"></div>
+            <div flex="70" class="md-3-line" layout="column">
+                <span class="md-title">{{ user.Name }}</span>
+                <span class="md-subhead">{{ user.email }}</span>
+                <span class="md-body-1">
+                    <md-icon class="badge" ng-class="{{ user.currentBadge.badgeClass }}">beenhere</md-icon>  {{ user.currentBadge.badge }}
+                    , {{ user.totalPoints }} Points
+                </span>
+            </div>
+        </md-card-content>
+    </md-card>
+    <div ng-repeat-end></div>

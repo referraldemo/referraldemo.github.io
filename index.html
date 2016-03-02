@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Naukri Employee Referral Program</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+        <link rel="manifest" href="manifest.json">
+        <link href="./bower_components/angular-material/angular-material.min.css" rel="stylesheet" />
+        <link href='https://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <style>
+            md-list-item .md-avatar { width: 52px; height: 52px }
+            *:not(md-icon) { font-family:'Roboto' !important }
+            .center { text-align:center }
+            .m10 { margin: 10px }
+            .mt20 { margin-top: 20px }
+            .pb60 { padding-bottom:60px }
+            .p15 { padding:15px }
+            .mauto { margin: 2px auto }
+            .red { color: #f00 }
+            .pf { position: fixed }
+            .drop-cv { bottom: 10px; right: 10px; z-index:20 }
+            table.card-table td:first-child { width: 120px }
+            .black { color: #222 !important }
+            .md-fab { margin-right: 8px !important }
+
+            .fb * { color:#3b5998 !important }
+            .tw * { color:#55acee !important }
+            .ln * { color:#0077b5 !important }
+            .wa * { color:#43d854 !important }
+
+            .wrp { word-wrap: break-word }
+
+            .txtC { text-align: center }
+            .txtR { text-align: right }
+
+            .tuple.Duplicate, .tuple.Declined { color: #888 }
+            .status.Offered, .status.Joined { background: #C7FF93 }
+            .status.Rejected { background: #FFEDED }
+            .status.Shortlisted { background: #DAFFE2 }
+            .status.In_Process, .status.OnHold { background: #FFFCA7 }
+            .status.No_Status { background: #C9E4EF }
+            .status { display: inline-block; padding: 1px 9px; font-size: 0.9em; border: 1px dashed #C5C5C5; }
+
+            md-card.card md-card-header md-card-avatar md-icon{ 
+                background-color: rgb(243, 243, 243);
+                border: 1px solid #DADADA
+            }
+
+            .badge{ color: #CD7F32 }
+            .badge.intermediate { color:#C0C0C0 }
+            .badge.pro { color:#FFD700 }
+
+
+            .referPointsTable {
+                border: 1px solid #eee;
+                border-width: 1px 1px 0 0;
+                background: #fff;
+                margin: 15px 0 25px
+            }
+
+            .referPointsTable td,.referPointsTable th {
+                padding: 10px;
+                height: 20px;
+                border: 1px solid #ededed;
+                border-width: 0 0 1px 1px;
+                color: #8d8d8d
+            }
+
+            .referPointsTable th {
+                background: #f6f6f6;
+                text-align: left;
+                color: #525252
+            }
+
+            .referPointsTable th.first {
+                text-align: right
+            }
+        </style>
+    </head>
+    <body ng-app="referralApp" layout="column" ng-controller="RootCtrl">
+
+    <md-content style="min-height:{{ height}}px">
+        <div class="sidebar" ng-controller="SideBarCtrl" ng-include="'js/SideBar/sidebar.html'"></div>
+
+        <ng-view></ng-view>
+    </md-content>
+
+    <script src="./bower_components/angular/angular.min.js" type="text/javascript" ></script>
+    <script src="./bower_components/angular-route/angular-route.min.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.min.js" type="text/javascript" ></script>
+    <script src="./bower_components/angular-aria/angular-aria.min.js" type="text/javascript" ></script>
+    <script src="./bower_components/angular-material/angular-material.min.js" type="text/javascript" ></script>
+    <script src="./bower_components/angular-messages/angular-messages.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/route.js"></script>
+    <script src="js/SideBar/sidebar.controller.js"></script>
+    <script src="js/ReferralPolicy/referralpolicy.controller.js"></script>
+    <script src="js/Points/points.controller.js"></script>
+    <script src="js/ReferralJobs/jobs.controller.js"></script>
+    <script src="js/User/user.controller.js"></script>
+    <script src="js/TrackReferrals/track.controller.js"></script>
+    <script src="js/Login/login.controller.js"></script>
+    <script src="js/Settings/settings.controller.js"></script>
+    <script src="js/Leaderboard/leaderboard.controller.js"></script>
+    <script src="js/Profile/profile.controller.js"></script>
+</body>
+</html>

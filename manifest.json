@@ -1,0 +1,16 @@
+{
+    "short_name": "Referral App",
+    "name": "Employee Referral",
+    "icons": [
+    {
+        "src": "https://fbcdn-photos-b-a.akamaihd.net/hphotos-ak-xaf1/t39.2081-0/11404834_725860324187030_516755928_n.png",
+        "sizes": "144x144",
+        "type": "image/png"
+    }
+    ],
+    "background_color":"#04537C",
+    "theme_color":"#3F51B5",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "gcm_sender_id": "583379521382"
+}

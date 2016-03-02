@@ -1,0 +1,61 @@
+<md-content class="md-padding">
+    <md-card>
+        <md-card-content>
+            <div layout="row">
+                <md-list>
+                    <md-list-item>
+                        <img ng-src="{{ user.profilePhoto}}" class="md-avatar" />
+                        <div class="md-2-line">
+                            <div class="md-headline">{{ user.name}}</div>
+                            <div class="md-subhead">
+                                <md-icon class="badge" ng-class="{{ user.badgeInfo.class}}">beenhere</md-icon> {{ user.badgeInfo.name}}  | {{ user.points}} Points
+                            </div>
+                        </div>
+                    </md-list-item>
+                    <md-divider class="m10"></md-divider>
+                    <md-list-item>
+                        <table width="100%">
+                            <tr>
+                                <td width="38%" class="txtC">
+                                    <div class="md-display-2">{{ user.totalApplies.total}}</div>
+                                    <div class="md-body-1">Job Applies</div>
+                                </td>
+                                <td width="31%" class="txtC">
+                                    <div class="md-display-2">{{ user.shares}}</div>
+                                    <div class="md-body-1">Jobs Shared</div>
+                                </td>
+                                <td width="31%" class="txtC">
+                                    <div class="md-display-2">{{ user.views}}</div>
+                                    <div class="md-body-1">Jobs Views</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </md-list-item>
+                </md-list>
+            </div>
+        </md-card-content>
+    </md-card>
+    <div class="md-padding">
+        <div class="md-subheader m10">
+            <div class="md-headline">User Credentials</div>
+        </div>
+        <md-content class="mt20">
+            <form>
+                <md-input-container class="md-block m10">
+                    <label>Official Email</label>
+                    <input type="text" value="{{ user.email}}" disabled>
+                </md-input-container>
+
+                <md-input-container class="md-block m10">
+                    <label>Personal Email</label>
+                    <input type="text" value="{{ user.personal}}" >
+                </md-input-container>
+
+                <md-input-container class="md-block m10">
+                    <label>Password</label>
+                    <input type="password" placeholder="Unchanged">
+                </md-input-container>
+            </form>
+        </md-content>
+    </div>
+</md-content>

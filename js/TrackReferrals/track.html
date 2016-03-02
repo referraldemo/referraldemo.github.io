@@ -1,0 +1,38 @@
+<div class="p15">
+    <div class="md-title">Track my Referrals</div>
+    <div class="md-heading">Know status of your referred applications</div>
+</div>
+<md-divider></md-divider>
+
+<div ng-controller="TracksCtrl">
+    <div ng-repeat-start="(jobId,candidates) in data.candidates"></div>
+    <md-card class="m10">
+        <md-card-header>
+            <md-card-avatar>
+                <md-icon>card_travel</md-icon>
+            </md-card-avatar>
+            <md-card-header-text>
+                <span class="md-title">{{ data.jobs[jobId].POST }}</span>
+                <span class="md-subhead">({{data.jobs[jobId].MINEXP}}-{{data.jobs[jobId].MAXEXP}} yrs), {{ data.jobs[jobId].CITY }}</span>
+            </md-card-header-text>
+        </md-card-header>
+        <md-divider></md-divider>
+        <md-card-content class="md-padding">
+            <div ng-repeat-start="candidate in candidates" layout="row" class="tuple md-padding {{ candidate.status }}">
+                <div class="md-2-line wrp" flex="65">
+                    <div class="md-title">{{ candidate.appliedByName }}</div>
+                    <div class="md-subhead">
+                        {{ candidate.appliedBy }} <md-icon md-svg-src="img/{{ candidate.source }}.svg"></md-icon> 
+                    </div>
+                </div>
+                <div class="md-2-line wrp txtR" flex>
+                    <div class="status {{ candidate.status }}">{{ data.names[candidate.status] }}</div>
+                    <div class="txtR md-body-2">on {{ candidate.activityDate }}</div>
+                </div>
+                
+            </div>
+            <md-divider ng-if="!$last" ng-repeat-end></md-divider>
+        </md-card-content>
+    </md-card>
+    <div ng-repeat-end></div>
+</div>

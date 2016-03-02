@@ -1,0 +1,119 @@
+<md-tabs md-stretch-tabs md-dynamic-height>
+    <md-tab>
+        <md-tab-label>Referral Jobs</md-tab-label>
+        <md-tab-body>
+            <md-content class="md-padding pb60" ng-controller="JobsCtrl">
+                <md-card ng-repeat="job in jobs">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline" ng-bind="job.title"></span>
+                            <span class="md-subhead" ng-if="job.rewards">
+                                Rewards: <span ng-bind="job.rewards"></span>
+                            </span>
+                        </md-card-title-text>
+                        <!--<md-card-title-media class="ml15">
+                            <div class="md-media-sm card-media">
+                                <img ng-src="{{ job.logo}}" />
+                                <div class="caption" ng-bind="job.caption"></div>
+                            </div>
+                        </md-card-title-media>-->
+
+                    </md-card-title>
+                    <md-card-content>
+                        <table class="card-table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                            <md-icon>place</md-icon> Location
+                            </td>
+                            <td>
+                                <span ng-bind="job.loc"></span>
+                            </td>
+                            </tr>
+                            <tr>
+                                <td>
+                            <md-icon>card_travel</md-icon> Experience
+                            </td>
+                            <td>
+                                <span ng-bind="job.exp"></span> years
+                            </td>
+                            </tr>
+                            <tr ng-if="job.salary">
+                                <td>
+                            <md-icon>local_atm</md-icon> Salary
+                            </td>
+                            <td>
+                                <span ng-bind="job.salary"></span>
+                            </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </md-card-content>
+                    
+                    <md-card-actions layout="row" ng-controller="DemoCtrl as demo">
+    
+                        <div flex="50" layout-align="left">
+                            <md-button class="pull-left md-raised">
+                                more <md-icon class="black">keyboard_arrow_right</md-icon>
+                            </md-button>
+                        </div>
+                        <div flex="50" layout="row" layout-align="end">
+                            <md-button aria-label="Upload CV" class="md-fab md-mini md-raised md-primary">
+                                <md-icon aria-label="Upload CV">file_upload</md-icon>
+                            </md-button>
+    
+                            <div layout="column pr">
+    
+                                <md-button aria-label="menu" class="md-fab md-raised md-mini" ng-click="showListBottomSheet($event)">
+                                    <md-icon class="black">share</md-icon>
+                                </md-button>
+    
+<!--                                <md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}"
+                                                   ng-class="demo.selectedMode" class="ml10">
+                                    <md-fab-trigger>
+                                        <md-button aria-label="menu" class="md-fab md-raised md-mini">
+                                            <md-icon class="black">share</md-icon>
+                                        </md-button>
+                                    </md-fab-trigger>
+                                    <md-fab-actions class="pa fxd-fab-nav">
+                                        <md-button aria-label="Email to Friend" class="md-fab md-mini md-raised">
+                                            <md-icon aria-label="Email to Friend" class="black">email</md-icon>
+                                        </md-button>
+                                        <md-button aria-label="Facebook" class="md-fab md-mini fb-button">
+                                            <md-icon aria-label="Facebook" md-svg-src="img/fb.svg"></md-icon>
+                                        </md-button>
+                                        <md-button aria-label="Twitter" class="md-fab md-mini tw-button">
+                                            <md-icon aria-label="Twitter" md-svg-src="img/tw.svg"></md-icon>
+                                        </md-button>
+                                        <md-button aria-label="Linked In" class="md-fab md-mini ln-button">
+                                            <md-icon aria-label="Linked In" md-svg-src="img/ln.svg"></md-icon>
+                                        </md-button>
+                                        <md-button aria-label="Linked In" class="md-fab md-mini wa-button">
+                                            <md-icon aria-label="Linked In" md-svg-src="img/wa.svg"></md-icon>
+                                        </md-button>
+                                    </md-fab-actions>
+                                </md-fab-speed-dial>-->
+                            </div>
+                        </div>
+    
+    
+    
+                    </md-card-actions
+                </md-card>
+            </md-content>
+        </md-tab-body>
+    </md-tab>
+    <!--<md-tab>
+        <md-tab-label>
+            <md-icon>search</md-icon>
+        </md-tab-label>
+        <md-tab-body></md-tab-body>
+    </md-tab>-->
+</md-tabs>
+
+
+<div class="pf drop-cv" ng-controller="DropCVCtrl">
+    <md-button class="md-fab md-primary" ng-click="showAdvanced($event)">
+        <md-icon>move_to_inbox</md-icon>
+    </md-button>
+</div>

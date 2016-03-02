@@ -1,0 +1,3 @@
+referralApp.controller('PointsCtrl', function(){
+    
+});
