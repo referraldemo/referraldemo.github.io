@@ -3,7 +3,7 @@
         <md-tab-label>Referral Jobs</md-tab-label>
         <md-tab-body>
             <md-content class="md-padding pb60" ng-controller="JobsCtrl">
-                <md-card ng-repeat="job in jobs">
+                <md-card ng-repeat="(jobId,job) in jobs">
                     <md-card-title>
                         <md-card-title-text>
                             <span class="md-headline" ng-bind="job.title"></span>
@@ -53,7 +53,7 @@
                     <md-card-actions layout="row" ng-controller="DemoCtrl as demo">
     
                         <div flex="50" layout-align="left">
-                            <md-button class="pull-left md-raised">
+                            <md-button class="pull-left md-raised" ng-click="showJobDesc(jobId)">
                                 more <md-icon class="black">keyboard_arrow_right</md-icon>
                             </md-button>
                         </div>
