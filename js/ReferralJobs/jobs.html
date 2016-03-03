@@ -53,12 +53,12 @@
                     <md-card-actions layout="row" ng-controller="DemoCtrl as demo">
     
                         <div flex="50" layout-align="left">
-                            <md-button class="pull-left md-raised" ng-click="showJobDesc(jobId,$event)">
+                            <md-button class="pull-left md-raised" ng-click="showJobDesc(jobId)">
                                 more <md-icon class="black">keyboard_arrow_right</md-icon>
                             </md-button>
                         </div>
                         <div flex="50" layout="row" layout-align="end">
-                            <md-button aria-label="Upload CV" class="md-fab md-mini md-raised md-primary">
+                            <md-button aria-label="Upload CV" class="md-fab md-mini md-raised md-primary" ng-click="showJobDesc(jobId)">
                                 <md-icon aria-label="Upload CV">file_upload</md-icon>
                             </md-button>
     

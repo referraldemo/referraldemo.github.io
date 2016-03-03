@@ -1,31 +1,28 @@
 var referralApp = angular.module('referralApp', ['ngMaterial', 'ngRoute', 'ngMessages']);
 
-//var prefx = ['th','st','nd','rd'];
-//var seep = [11,12,13];
-//
-//referralApp.filter('refindex', function($sce) {
-//    return function(input){
-//            return $sce.trustAsHtml(input+'<sup>'+(seep.indexOf(input%100)<0&&input%10<4?prefx[input%10]:'th')+'</sup>');
-//    };
-//});
+referralApp.filter('unsafe', function ($sce) {
+    return function (input) {
+        return $sce.trustAsHtml(input);
+    };
+});
 
 /** Writing Authentication for Referral App **/
 referralApp.run(['$rootScope', 'Auth', '$mdDialog', '$location', function ($rootScope, Auth, $mdDialog, $location) {
         $rootScope.$on('$routeChangeStart', function () {
-        //    Auth.checkLogin(function () {
-                if (!Auth.isLoggedIn()) {
-                    $mdDialog.show({
-                        controller: 'LoginCtrl',
-                        templateUrl: '/js/Login/login.html',
-                        parent: angular.element(document.body),
-                        clickOutsideToClose: false,
-                        fullscreen: true,
-                        escapeToClose: false,
-                        openFrom: 'bottom'
-                    });
+            //    Auth.checkLogin(function () {
+            if (!Auth.isLoggedIn()) {
+                $mdDialog.show({
+                    controller: 'LoginCtrl',
+                    templateUrl: '/js/Login/login.html',
+                    parent: angular.element(document.body),
+                    clickOutsideToClose: false,
+                    fullscreen: true,
+                    escapeToClose: false,
+                    openFrom: 'bottom'
+                });
 
-                }
-            });
+            }
+        });
 
         //});
     }]);
@@ -75,19 +72,19 @@ referralApp.config(['$httpProvider', function ($httpProvider) {
 // setting side bar height, hack required
 referralApp.controller('RootCtrl', function ($scope, $http, __url) {
     $scope.height = window.innerHeight;
-    
+
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./sw.js').then(function (reg) {
             reg.pushManager.subscribe({
                 userVisibleOnly: true
             }).then(function (sub) {
                 var endpointSections = sub.endpoint.split('/');
-                $http.post(__url+'/register/notification',
-                {subscriptionId:endpointSections[endpointSections.length - 1]});
+                $http.post(__url + '/register/notification',
+                        {subscriptionId: endpointSections[endpointSections.length - 1]});
             });
         }).catch(function (err) {
         });
     }
-    
+
 });
 

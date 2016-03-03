@@ -50,7 +50,7 @@
                         </tr>
                         <tr>
                             <td colspan="2" class="md-padding">
-                                <span ng-bind="jobs[jobId].desc"></span>
+                                <span ng-bind-html="jobs[jobId].desc|unsafe"></span>
                             </td>
                         </tr>
                         </tbody>
