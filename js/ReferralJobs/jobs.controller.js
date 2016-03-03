@@ -42,6 +42,7 @@ referralApp.controller('JobsCtrl', ['$scope', 'jobsFactory', function ($scope, j
 
 
         $scope.showJobDesc = function (jobId) {
+	    console.log(jobId);
             $scope.showAdvanced = function (ev) {
                 $mdDialog.show({
                     controller: function ($scope, $mdDialog) {
@@ -53,7 +54,7 @@ referralApp.controller('JobsCtrl', ['$scope', 'jobsFactory', function ($scope, j
                     parent: angular.element(document.body),
                     targetEvent: ev,
                     clickOutsideToClose: true,
-                    fullscreen: false
+                    fullscreen: true
                 });
             };
         };
