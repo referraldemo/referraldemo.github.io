@@ -20,13 +20,13 @@ referralApp.factory('Auth', ['$http', '__url', '$location', '$mdToast', function
         Auth.checkLogin = function (__callback) {
             if (Auth.isLoggedIn())
                 return __callback();
-            if (!navigator.onLine) {
-                $mdToast.show(
-                    $mdToast.simple()
-                    .textContent('No Internet Connected')
-                    .hideDelay(3000)
-                );
-                return __callback();
+//            if (!navigator.onLine) {
+//                $mdToast.show(
+//                    $mdToast.simple()
+//                    .textContent('No Internet Connected')
+//                    .hideDelay(3000)
+//                );
+ //               return __callback();
             }
             
             /* 

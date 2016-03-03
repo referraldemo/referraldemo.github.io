@@ -29,6 +29,8 @@ var urlsToCache = [
     './js/Points/points.html',
     './js/ReferralJobs/jobs.controller.js',
     './js/ReferralJobs/jobs.html',
+    './js/ReferralJobs/jobdesc.html',
+    './js/ReferralJobs/dropcv.html',
     './js/User/user.controller.js',
     './js/TrackReferrals/track.controller.js',
     './js/TrackReferrals/track.html',
