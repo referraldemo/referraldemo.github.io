@@ -35,7 +35,7 @@ referralApp.factory('jobsFactory', ['$http', '__url', function ($http, __url) {
 
     }]);
 
-referralApp.controller('JobsCtrl', ['$scope', 'jobsFactory', '$mdDialog', function ($scope, jobsFactory, $mdDialog) {
+referralApp.controller('JobsCtrl', ['$scope', 'jobsFactory', function ($scope, jobsFactory, $mdDialog) {
         jobsFactory.getReferralJobs(function (res) {
             $scope.jobs = res;
         });
@@ -51,8 +51,8 @@ referralApp.controller('JobsCtrl', ['$scope', 'jobsFactory', '$mdDialog', functi
                 templateUrl: '/js/ReferralJobs/jobdesc.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
-                clickOutsideToClose: false,
-                fullscreen: false
+                clickOutsideToClose: true,
+                fullscreen: true
             });
         };
     }]);
