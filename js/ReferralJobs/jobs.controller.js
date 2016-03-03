@@ -55,7 +55,7 @@ referralApp.controller('DemoCtrl',function($scope,$mdBottomSheet){
     };
 });
 
-referralApp.controller('DropCVCtrl',function($scope){
+referralApp.controller('DropCVCtrl',function($scope,$mdDialog){
     $scope.showAdvanced = function(ev) {
         $mdDialog.show({
             controller: function($scope, $mdDialog){
