@@ -27,7 +27,7 @@ referralApp.factory('Auth', ['$http', '__url', '$location', '$mdToast', function
 //                    .hideDelay(3000)
 //                );
  //               return __callback();
-            }
+//            }
             
             /* 
             $http.get(__url + '/user').success(function (res) {
