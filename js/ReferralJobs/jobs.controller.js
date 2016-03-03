@@ -43,7 +43,7 @@ referralApp.controller('JobsCtrl', ['$scope', 'jobsFactory', '$mdDialog', functi
 
         $scope.showJobDesc = function (jobId,ev) {
                 
-                $scope.jobId = jobId;
+                angular.element('[ng-controller="JobDescCtrl"]').scope().jobId = jobId;
             
                 $mdDialog.show({
                     controller: function ($scope, $mdDialog) {
@@ -91,10 +91,11 @@ referralApp.controller('DropCVCtrl', function ($scope, $mdDialog) {
     };
 });
 
-referralApp.controller('JobDescCtrl', function ($scope) {
-
-});
-
+referralApp.controller('JobDescCtrl',['$scope', 'jobsFactory', function ($scope, jobsFactory) {
+    jobsFactory.getReferralJobs(function (res) {
+        $scope.jobs = res;
+    });
+}]);
 
 referralApp.controller('DropCVMeCtrl', function ($scope) {
     $scope.states = [
