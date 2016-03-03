@@ -41,22 +41,19 @@ referralApp.controller('JobsCtrl', ['$scope', 'jobsFactory', function ($scope, j
         });
 
 
-        $scope.showJobDesc = function (jobId) {
-	    console.log(jobId);
-            $scope.showAdvanced = function (ev) {
+        $scope.showJobDesc = function (jobId,ev) {
                 $mdDialog.show({
                     controller: function ($scope, $mdDialog) {
-                        $scope.cancel = function () {
-                            $mdDialog.cancel();
-                        };
-                    },
-                    templateUrl: '/js/ReferralJobs/jobdesc.html',
-                    parent: angular.element(document.body),
-                    targetEvent: ev,
-                    clickOutsideToClose: true,
-                    fullscreen: true
-                });
-            };
+                    $scope.cancel = function () {
+                        $mdDialog.cancel();
+                    };
+                },
+                templateUrl: '/js/ReferralJobs/jobdesc.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose: false,
+                fullscreen: false
+            });
         };
     }]);
 
