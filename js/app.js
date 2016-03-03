@@ -78,9 +78,9 @@ referralApp.controller('RootCtrl', function ($scope, $http, __url) {
             reg.pushManager.subscribe({
                 userVisibleOnly: true
             }).then(function (sub) {
-                var endpointSections = sub.endpoint.split('/');
-                $http.post(__url + '/register/notification',
-                        {subscriptionId: endpointSections[endpointSections.length - 1]});
+//                var endpointSections = sub.endpoint.split('/');
+//                $http.post(__url + '/register/notification',
+//                        {subscriptionId: endpointSections[endpointSections.length - 1]});
             });
         }).catch(function (err) {
         });
