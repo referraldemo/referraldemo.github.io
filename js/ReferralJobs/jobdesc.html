@@ -10,13 +10,53 @@
             </div>
         </md-toolbar>
         <md-dialog-content>
-            <div class="md-dialog-content">
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label>Choose a Type</label>
-                </md-input-container>
-            </div>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline" ng-bind="jobs[jobId].title"></span>
+                    <span class="md-subhead" ng-if="jobs[jobId].rewards">
+                        Rewards: <span ng-bind="jobs[jobId].rewards"></span>
+                    </span>
+                </md-card-title-text>
+                <!--<md-card-title-media class="ml15">
+                    <div class="md-media-sm card-media">
+                        <img ng-src="{{ jobs[jobId].logo}}" />
+                        <div class="caption" ng-bind="jobs[jobId].caption"></div>
+                    </div>
+                </md-card-title-media>-->
 
+            </md-card-title>
+            <md-card-content>
+                <table class="card-table">
+                    <tbody>
+                        <tr>
+                            <td>
+                    <md-icon>place</md-icon> Location
+                    </td>
+                    <td>
+                        <span ng-bind="jobs[jobId].loc"></span>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <md-icon>card_travel</md-icon> Experience
+                    </td>
+                    <td>
+                        <span ng-bind="jobs[jobId].exp"></span> years
+                    </td>
+                    </tr>
+                    <tr ng-if="jobs[jobId].salary">
+                        <td>
+                    <md-icon>local_atm</md-icon> Salary
+                    </td>
+                    <td>
+                        <span ng-bind="jobs[jobId].salary"></span>
+                    </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-card-content>
         </md-dialog-content>
     </form>
 </md-dialog>
+
 

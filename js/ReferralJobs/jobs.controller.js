@@ -42,6 +42,9 @@ referralApp.controller('JobsCtrl', ['$scope', 'jobsFactory', '$mdDialog', functi
 
 
         $scope.showJobDesc = function (jobId,ev) {
+                
+                $scope.jobId = jobId;
+            
                 $mdDialog.show({
                     controller: function ($scope, $mdDialog) {
                     $scope.cancel = function () {
@@ -102,5 +105,6 @@ referralApp.controller('DropCVMeCtrl', function ($scope) {
         'HR Department'
     ];
 });
+
 
 
