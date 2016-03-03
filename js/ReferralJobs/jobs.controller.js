@@ -63,7 +63,7 @@ referralApp.controller('DropCVCtrl',function($scope){
                     $mdDialog.cancel();
                 };
             },
-            templateUrl: 'dropcv.html',
+            templateUrl: '/js/ReferralJobs/dropcv.html',
             parent: angular.element(document.body),
             targetEvent: ev,
             clickOutsideToClose:true,
@@ -72,4 +72,14 @@ referralApp.controller('DropCVCtrl',function($scope){
     };
 });
 
+
+referralApp.controller('DropCVMeCtrl', function($scope){
+    $scope.states = [
+        'General Drop CV',
+        'Tech Department',
+        'Sales Department',
+        'Finance Department',
+        'HR Department'
+    ];
+});
 

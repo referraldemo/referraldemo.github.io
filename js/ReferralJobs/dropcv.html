@@ -1,0 +1,29 @@
+<md-dialog aria-label="Drop a CV" ng-cloak ng-controller="DropCVMeCtrl">
+  <form>
+	<md-toolbar>
+	  <div class="md-toolbar-tools">
+		<h2>Drop a CV</h2>
+		<span flex></span>
+		<md-button class="md-icon-button" ng-click="cancel()">
+		  <md-icon aria-label="Close dialog">close</md-icon>
+		</md-button>
+	  </div>
+	</md-toolbar>
+	<md-dialog-content>
+	  <div class="md-dialog-content">
+		<md-input-container class="md-block" flex-gt-sm>
+            <label>Choose a Type</label>
+            <md-select ng-model="user.state">
+              <md-option ng-repeat="(key,state) in states" value="{{key}}">
+                {{state}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-button class="md-raised md-primary" layout-fill="center" ng-click="cancel()">
+			  <md-icon>cloud_upload</md-icon> Upload CV
+		  </md-button>
+	  </div>
+	  
+	</md-dialog-content>
+  </form>
+</md-dialog>
